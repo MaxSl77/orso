@@ -25,26 +25,45 @@ class DoctorResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('thumbnail')
+                    ->label('Фото')
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->label('ФИО')
                     ->required(),
                 Forms\Components\TextInput::make('profession')
+                    ->label('Специальность')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('category')
+                    ->label('Категория')
                     ->required(),
                 Forms\Components\TextInput::make('inst')
+                    ->label('Инст')
                     ->required(),
                 Repeater::make('educations')
+                    ->label('Образование')
                     ->relationship()
                     ->schema([
                         Forms\Components\TextInput::make('university')
-                            ->required()
-                            ->columnSpanFull(),
+                            ->label('Образование')
+                            ->required(),
                         Forms\Components\TextInput::make('year')
+                            ->label('Год')
                             ->required()
-                            ->columnSpanFull(),
+                            ->numeric(),
+                    ]),
+                Repeater::make('courses')
+                    ->relationship()
+                    ->schema([
+                        Forms\Components\TextInput::make('course')
+                            ->label('Курс')
+                            ->required(),
+                        Forms\Components\TextInput::make('year')
+                            ->label('Год')
+                            ->required()
+                            ->numeric(),
                     ])
+
             ]);
     }
 

@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class DoctorCourse extends Model
 {
+    protected $table = 'doctor_courses';
+
     protected $fillable = [
+        'doctor_id',
         'course',
         'year',
     ];
