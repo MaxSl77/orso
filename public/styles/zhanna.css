@@ -1,0 +1,163 @@
+.person {
+  padding: 40px;
+  margin-bottom: 175px;
+}
+.person__inner {
+  display: flex;
+  justify-content: center;
+}
+.person__inner-img {
+  margin-right: 50px;
+}
+.person__inner-img img {
+  width: 400px;
+  height: 500px;
+  box-shadow: 7px 0px 0 -3px #138462;
+}
+@media (max-width: 500px) {
+  .person__inner-img img {
+    width: 200px;
+    height: 250px;
+  }
+}
+.person__inner-info {
+  display: flex;
+  flex-direction: column;
+}
+.person__inner-info .person-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+.person__inner-info .person-text {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+.person__inner-info .person-socials {
+  margin-top: auto;
+  display: flex;
+}
+.person__inner-info .person-socials .person-socials__inst{
+    width: 20px;
+    height: 20px;
+}
+.person__inner-info .person-socials img {
+  margin-right: 10px;
+}
+.person__inner-info .person-socials .person-nik {
+  font-weight: 700;
+}
+@media (max-width: 950px) {
+  .person__inner-info .person-socials {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 950px) {
+  .person__inner {
+    flex-direction: column;
+  }
+}
+.person__stages {
+  text-align: center;
+  margin-top: 50px;
+}
+.person__stages-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2.5px;
+}
+.person__stages-text {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+}
+.person__examples {
+  margin-top: 50px;
+  text-align: center;
+  background-color: #fafafa;
+}
+.person__examples-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
+.person__examples-ba {
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 2.5px;
+}
+.person__examples .carousel {
+  width: 100%;
+  padding: 40px;
+}
+.person__examples .carousel__item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.person__examples .carousel__item .item {
+  display: flex;
+  justify-content: space-between;
+}
+.person__examples .carousel__item .item-first {
+    padding: 0 40px;
+}
+.person__examples .carousel__item .item-second {
+    padding: 0 40px;
+}
+.person__examples .carousel__item .item-first img {
+  width: 600px;
+  height: 400px;
+}
+@media (max-width: 780px) {
+  .person__examples .carousel__item .item-first img {
+    width: 300px;
+    height: 200px;
+  }
+}
+.person__examples .carousel__item .item-first .item__text {
+  margin-top: 20px;
+}
+.person__examples .carousel__item .item-second img {
+  width: 600px;
+  height: 400px;
+}
+@media (max-width: 780px) {
+  .person__examples .carousel__item .item-second img {
+    width: 300px;
+    height: 200px;
+  }
+}
+.person__examples .carousel__item .item-second .item__text {
+  margin-top: 20px;
+}
+@media (max-width: 1150px) {
+  .person__examples .carousel__item .item {
+    flex-direction: column;
+  }
+  .person__examples .carousel__item .item .item__text {
+    margin-bottom: 20px;
+  }
+}
+.person .carousel-arrows {
+  text-align: center;
+  margin-top: 10px;
+}
+.person .prev-arrow,
+.person .next-arrow {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #fafafa;
+  padding: 20px;
+}
+.person .prev-arrow:hover,
+.person .next-arrow:hover {
+  color: #333;
+}
+
+/*# sourceMappingURL=zhanna.css.map */
