@@ -32,7 +32,8 @@ class HomeController extends Controller
 
     public function zhanna()
     {
-        return view('zhanna', ['examples' => Doctor::first()->examples]);
+        $doctor = Doctor::first();
+        return view('zhanna', ['doctor' => $doctor]);
     }
 
     public function mikhail()

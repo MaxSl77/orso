@@ -48,15 +48,12 @@
 <div class="person">
     <div class="person__inner">
         <div class="person__inner-img">
-            <img src="./assets/IMG_4979.jpg" alt="photo">
+            <img src="{{ asset('storage/'.$doctor->thumbnail) }}" alt="photo">
         </div>
         <div class="person__inner-info">
-            <div class="person-name">Жанна Владимировна
-                Кудина</div>
+            <div class="person-name">{{ $doctor->name }}</div>
             <br />
-            <div class="person-text">Врач-косметолог
-                <p>первой квалификационной категории</p>
-            </div>
+            <div class="person-text">{{ $doctor->profession }}</div>
             <br />
             <div class="person-text">
                 <b>Стаж работы: </b>
@@ -67,16 +64,15 @@
                 <b>Образование:</b>
             </div>
             <br />
-            <div class="person-text">
-                2006 год – Гродненский государственный медицинский университет
-            </div>
-            <br />
-            <div class="person-text">
-                2011 год – Очная клиническая ординатура по специальности «Дерматология»
-            </div>
+            @foreach($doctor->educations as $education)
+                <div class="person-text">
+                    {{ $education->year }} год - {{ $education->university }}
+                </div>
+                <br />
+            @endforeach
             <div class="person-socials">
                 <img src="./assets/instagram.png" alt="personInst">
-                <div class="person-nik">dr.kudina_zhanna</div>
+                <div class="person-nik">{{ $doctor->inst }}</div>
             </div>
         </div>
     </div>
@@ -84,30 +80,15 @@
         <div class="person__stages-title">
             Повышение квалификации и стажировки:
         </div>
-        <div class="person__stages-text">2008 год – «Медицинские основы формирования здоровья»
-        </div>
-        <div class="person__stages-text">2011 год – «Частная косметология»
-        </div>
-        <div class="person__stages-text">2012 год – «Лазеры в хирургии»
-        </div>
-        <div class="person__stages-text">2013 год – «Лазерные технологии в косметологии и пластической хирургии»
-        </div>
-        <div class="person__stages-text">2013 год – «Аппаратная физиотерапия в косметологии»
-        </div>
-        <div class="person__stages-text">2015 год – Переподготовка по специальности «Косметология»
-        </div>
-        <div class="person__stages-text">2016 год – «Организация медицинской помощи населению»
-        </div>
-        <div class="person__stages-text">2016 год – Присвоена первая квалификационная категория
-        </div>
-        <div class="person__stages-text">2016 год – Присвоена первая квалификационная категория
-        </div>
+        @foreach($doctor->courses as $course)
+            <div class="person__stages-text">{{ $course->year }} год – {{ $course->course }}</div>
+        @endforeach
     </div>
     <div class="person__examples">
         <div class="person__examples-title">Примеры работ:</div>
         <div class="person__examples-ba">До & После</div>
         <div class="carousel">
-            @foreach($examples as $example)
+            @foreach($doctor->examples as $example)
                 <div class="carousel__item">
                     <div class="item">
                         <div>
