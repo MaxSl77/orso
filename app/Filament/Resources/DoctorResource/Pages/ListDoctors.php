@@ -10,6 +10,8 @@ class ListDoctors extends ListRecords
 {
     protected static string $resource = DoctorResource::class;
 
+    protected static ?string $title = 'Персонал';
+
     protected function getHeaderActions(): array
     {
         return [

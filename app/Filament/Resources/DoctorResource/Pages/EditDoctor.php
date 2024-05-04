@@ -10,6 +10,8 @@ class EditDoctor extends EditRecord
 {
     protected static string $resource = DoctorResource::class;
 
+    protected static ?string $title = 'Редактировать Персонал';
+
     protected function getHeaderActions(): array
     {
         return [

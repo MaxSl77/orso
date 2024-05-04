@@ -9,4 +9,6 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateAdminUser extends CreateRecord
 {
     protected static string $resource = AdminUserResource::class;
+
+    protected static ?string $title = 'Создать Администратора';
 }

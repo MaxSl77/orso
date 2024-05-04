@@ -17,6 +17,8 @@ class AdminUserResource extends Resource
 {
     protected static ?string $model = AdminUser::class;
 
+    protected static ?string $navigationLabel = 'Администраторы';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

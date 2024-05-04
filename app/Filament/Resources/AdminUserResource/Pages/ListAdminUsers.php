@@ -10,6 +10,8 @@ class ListAdminUsers extends ListRecords
 {
     protected static string $resource = AdminUserResource::class;
 
+    protected static ?string $title = 'Администраторы';
+
     protected function getHeaderActions(): array
     {
         return [
