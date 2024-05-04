@@ -107,66 +107,21 @@
         <div class="person__examples-title">Примеры работ:</div>
         <div class="person__examples-ba">До & После</div>
         <div class="carousel">
-            <div class="carousel__item">
-                <div class="item">
-                    <div class="item-first">
-                        <div class="item__images">
-                            <img src="./assets/IMG_9088.JPG" alt="rha-before">
-                        </div>
-                        <div class="item__text">
-                            Коррекция губ (Teosyal RHA 3)
-                        </div>
-                    </div>
-                    <div class="item-second">
-                        <div class="item__images">
-                            <img src="./assets/IMG_9107.JPG" alt="ph-before">
-                        </div>
-                        <div class="item__text">
-                            Коррекция мимических морщин ботулиническим токсином типа А
+            @foreach($examples as $example)
+                <div class="carousel__item">
+                    <div class="item">
+                        <div>
+                            <div class="item__images d-flex">
+                                <img class="img-fluid" style="max-width: 240px" src="{{asset('storage/' . $example->image_before)}}" alt="before">
+                                <img class="img-fluid" style="max-width: 240px" src="{{asset('storage/' . $example->image_after)}}" alt="after">
+                            </div>
+                            <div class="item__text">
+                                {{ $example->title }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel__item">
-                <div class="item">
-                    <div class="item-first">
-                        <div class="item__images">
-                            <img src="./assets/IMG_9105.JPG" alt="rha-before">
-                        </div>
-                        <div class="item__text">
-                            Коррекция носогубной складки (STYLAGE L)
-                        </div>
-                    </div>
-                    <div class="item-second">
-                        <div class="item__images">
-                            <img src="./assets/IMG_9106.JPG" alt="ph-before">
-                        </div>
-                        <div class="item__text">
-                            Коррекция губ (STYLAGE L)
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel__item">
-                <div class="item">
-                    <div class="item-first">
-                        <div class="item__images">
-                            <img src="./assets/IMG_9110.JPG" alt="rha-before">
-                        </div>
-                        <div class="item__text">
-                            Коррекция губ (STYLAGE L)
-                        </div>
-                    </div>
-                    <div class="item-second">
-                        <div class="item__images">
-                            <img src="./assets/IMG_9110.JPG" alt="ph-before">
-                        </div>
-                        <div class="item__text">
-                            Коррекция губ (STYLAGE L)
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="carousel-arrows">

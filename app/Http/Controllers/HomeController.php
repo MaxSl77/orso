@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\Home;
 use App\Models\Procedure;
 use App\Models\ProcedureGroup;
-use App\Models\Sales;
+use App\Models\Sale;
 use App\Models\Stuff;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $sales = Sales::all();
+        $sales = Sale::all();
         $procedureGroups = ProcedureGroup::with('procedures')->get();
         $procedures = Procedure::all();
 
@@ -31,7 +32,7 @@ class HomeController extends Controller
 
     public function zhanna()
     {
-        return view('zhanna');
+        return view('zhanna', ['examples' => Doctor::first()->examples]);
     }
 
     public function mikhail()

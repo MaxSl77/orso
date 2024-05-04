@@ -10,6 +10,17 @@
   word-break: break-word;
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
 .header {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: -webkit-sticky;

@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SalesRequest;
-use App\Models\Sales;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class SalesController extends Controller
 {
     public function index()
     {
-        $sales = Sales::all();
+        $sales = Sale::all();
 
         return view("admin.sales.index", [
             "sales" => $sales,

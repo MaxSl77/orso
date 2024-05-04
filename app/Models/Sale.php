@@ -21,23 +21,22 @@ class Sale extends Model
         "thumbnail",
     ];
 
-    public function getThumbnailAttribute($value)
-    {
-        if($value != null){
-            return $value ;
-        }
-
-        return self::NO_IMAGE;
-    }
-
-    public function setThumbnailAttribute($value)
-    {
-        if ($value instanceof UploadedFile) {
-            if ($this->thumbnail !== self::NO_IMAGE && Storage::exists($this->thumbnail)) {
-                Storage::delete($this->thumbnail);
-            }
-            $this->attributes['thumbnail'] = $value->store("uploads");
-        }
-    }
-
+//    public function getThumbnailAttribute($value)
+//    {
+//        if($value != null){
+//            return $value ;
+//        }
+//
+//        return self::NO_IMAGE;
+//    }
+//
+//    public function setThumbnailAttribute($value)
+//    {
+//        if ($value instanceof UploadedFile) {
+//            if ($this->thumbnail !== self::NO_IMAGE && Storage::exists($this->thumbnail)) {
+//                Storage::delete($this->thumbnail);
+//            }
+//            $this->attributes['thumbnail'] = $value->store("uploads");
+//        }
+//    }
 }

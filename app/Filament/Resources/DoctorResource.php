@@ -64,8 +64,20 @@ class DoctorResource extends Resource
                             ->label('Год')
                             ->required()
                             ->numeric(),
-                    ])
-
+                    ]),
+                Repeater::make('examples')
+                    ->relationship()
+                    ->schema([
+                        Forms\Components\FileUpload::make('image_before')
+                            ->label('Фото До')
+                            ->required(),
+                        Forms\Components\FileUpload::make('image_after')
+                            ->label('Фото После')
+                            ->required(),
+                        Forms\Components\TextInput::make('title')
+                            ->label('Заголовок')
+                            ->required(),
+                    ]),
             ]);
     }
 

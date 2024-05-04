@@ -28,6 +28,11 @@ class Doctor extends Model
         return $this->hasMany(DoctorCourse::class);
     }
 
+    public function examples()
+    {
+        return $this->hasMany(DoctorExample::class);
+    }
+
 //    public function getThumbnailAttribute($value)
 //    {
 //        if($value != null){
