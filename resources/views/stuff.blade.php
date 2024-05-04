@@ -37,80 +37,26 @@
     <div class="stuff__content">
         <div class="stuff__content-title">Специалисты</div>
         <div class="stuff__content-items">
-            <div class="stuff__content-items-item">
-                <div class="stuff__right">
-                    <div class="stuff__item-img">
-                        <img src="./assets/IMG_4979.JPG" alt="Zhanna">
+            @foreach($doctors as $doctor)
+                <div class="stuff__content-items-item">
+                    <div class="stuff__right">
+                        <div class="stuff__item-img">
+                            <img src="{{asset('/storage/'.$doctor->thumbnail)}}" alt="Zhanna">
+                        </div>
+                        <div class="stuff__item-name-inner">
+                            <div class="stuff__name">{{$doctor->name}}</div>
+                            <div class="stuff__direction">{{$doctor->profession}}</div>
+                        </div>
                     </div>
-                    <div class="stuff__item-name-inner">
-                        <div class="stuff__name">Жанна Владимировна Кудина</div>
-                        <div class="stuff__direction">Врач-косметолог</div>
-                    </div>
-                </div>
-                <div class="stuff__left">
-                    <div class="stuff__item-experience">Стаж работы: 19 лет</div>
-                    <button class="stuff__item-button">
-                        <a href="{{route('zhanna')}}">Подробнее</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="stuff__content-items-item">
-                <div class="stuff__right">
-                    <div class="stuff__item-img">
-                        <img src="./assets/man.JPG" alt="Mikhail">
-                    </div>
-                    <div class="stuff__item-name-inner">
-                        <div class="stuff__name">Михаил Павлович Кудин</div>
-                        <div class="stuff__direction">Пластический хирург</div>
+                    <div class="stuff__left">
+                        <div class="stuff__item-experience">Стаж работы: {{$doctor->experience}}</div>
+                        <button class="stuff__item-button">
+{{--                            <a href="{{route('stuff.show', $doctor->id)}}">Подробнее</a>--}}
+                            <a href="#">Подробнее</a>
+                        </button>
                     </div>
                 </div>
-                <div class="stuff__left">
-                    <div class="stuff__item-experience">Стаж работы: 15 лет</div>
-                    <button class="stuff__item-button">
-                        <a href="{{route('mikhail')}}">Подробнее</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="stuff__content-items-item">
-                <div class="stuff__right">
-                    <div class="stuff__item-img">
-                        <img src="./assets/orso_clinic.png" alt="Olga">
-                    </div>
-                    <div class="stuff__item-name-inner">
-                        <div class="stuff__name">Ольга Николаевна Ганусевич</div>
-                        <div class="stuff__direction">Врач-онколог</div>
-                    </div>
-                </div>
-                <div class="stuff__left">
-                    <div class="stuff__item-experience">Стаж работы: 27 лет</div>
-                    <button class="stuff__item-button">
-                        <a href="{{route('olga')}}">Подробнее</a>
-                    </button>
-                </div>
-            </div>
-
-
-{{--            @foreach($stuff as $idStuff)--}}
-{{--            <div class="stuff__content-items-item">--}}
-{{--                <div class="stuff__right">--}}
-{{--                    <div class="stuff__item-img">--}}
-{{--                        <img src="{{asset('/storage/'.$idStuff->thumbnail)}}" alt="Zhanna">--}}
-{{--                    </div>--}}
-{{--                    <div class="stuff__item-name-inner">--}}
-{{--                        <div class="stuff__name">{{$idStuff->name}}</div>--}}
-{{--                        <div class="stuff__direction">{{$idStuff->profession}}</div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="stuff__left">--}}
-{{--                    <div class="stuff__item-experience">Стаж работы: {{$idStuff->experience}}</div>--}}
-{{--                    <button class="stuff__item-button">--}}
-{{--                        <a href="{{route('stuff.show', $idStuff->id)}}">Подробнее</a>--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            @endforeach--}}
+            @endforeach
         </div>
     </div>
 </div>

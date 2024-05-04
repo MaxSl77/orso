@@ -27,7 +27,7 @@ class HomeController extends Controller
 
     public function stuff ()
     {
-        return view('stuff');
+        return view('stuff', ['doctors' => Doctor::all()]);
     }
 
     public function zhanna()
