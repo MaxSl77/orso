@@ -8,7 +8,7 @@ use App\Models\AdminUser;
 use App\Models\Equipments;
 use App\Models\Procedure;
 use App\Models\ProcedureGroup;
-use App\Models\Sales;
+use App\Models\Sale;
 use App\Models\Stuff;
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $sales = Sales::all()->count();
+        $sales = Sale::all()->count();
         $adminUser = AdminUser::all()->count();
         $equipments = Equipments::all()->count();
         $procedureGroups = ProcedureGroup::all()->count();
