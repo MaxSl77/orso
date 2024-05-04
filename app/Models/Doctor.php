@@ -18,7 +18,7 @@ class Doctor extends Model
         'inst',
     ];
 
-    public function educations()
+    public function educations(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(DoctorEducation::class);
     }

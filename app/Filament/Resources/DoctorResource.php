@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Components\Repeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -24,20 +25,26 @@ class DoctorResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('thumbnail')
-                    ->required()
-                    ->columnSpanFull(),
+                    ->required(),
                 Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->columnSpanFull(),
+                    ->required(),
                 Forms\Components\TextInput::make('profession')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('category')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('inst')
-                    ->required()
-                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('category')
+                    ->required(),
+                Forms\Components\TextInput::make('inst')
+                    ->required(),
+                Repeater::make('educations')
+                    ->relationship()
+                    ->schema([
+                        Forms\Components\TextInput::make('university')
+                            ->required()
+                            ->columnSpanFull(),
+                        Forms\Components\TextInput::make('year')
+                            ->required()
+                            ->columnSpanFull(),
+                    ])
             ]);
     }
 
@@ -46,6 +53,8 @@ class DoctorResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('profession')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('category')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
