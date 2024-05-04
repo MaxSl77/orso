@@ -28,7 +28,8 @@ class DoctorResource extends Resource
             ->schema([
                 Forms\Components\FileUpload::make('thumbnail')
                     ->label('Фото')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('name')
                     ->label('ФИО')
                     ->required(),
@@ -53,7 +54,8 @@ class DoctorResource extends Resource
                             ->label('Год')
                             ->required()
                             ->numeric(),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
                 Repeater::make('courses')
                     ->relationship()
                     ->schema([
@@ -64,7 +66,8 @@ class DoctorResource extends Resource
                             ->label('Год')
                             ->required()
                             ->numeric(),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
                 Repeater::make('examples')
                     ->relationship()
                     ->schema([
@@ -77,7 +80,8 @@ class DoctorResource extends Resource
                         Forms\Components\TextInput::make('title')
                             ->label('Заголовок')
                             ->required(),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
             ]);
     }
 
